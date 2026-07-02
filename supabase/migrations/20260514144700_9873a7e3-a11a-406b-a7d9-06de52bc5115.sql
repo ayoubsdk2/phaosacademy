@@ -1,0 +1,2 @@
+revoke execute on function public.recalculate_academy_profile(uuid, boolean) from public, anon, authenticated;
+revoke execute on function public.sync_user_progress_profile() from public, anon, authenticated;

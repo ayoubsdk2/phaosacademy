@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 215 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+
+    --primary: 217 91% 60%;
+    --primary-hover: 221 83% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 215 25% 15%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 210 40% 96%;
+    --accent-foreground: 215 25% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.75rem;
+
+    /* Referrizer Blue sidebar */
+    --sidebar-bg: 215 28% 17%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-muted: 215 20% 25%;
+    --sidebar-active: 217 91% 60%;
+    --sidebar-hover: 215 20% 22%;
+
+    --navbar-bg: 0 0% 100%;
+    --navbar-border: 214 32% 91%;
+
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 8px 20px -5px rgba(0,0,0,0.04);
+    --card-shadow-hover: 0 4px 12px rgba(0,0,0,0.1), 0 16px 32px -8px rgba(0,0,0,0.06);
+
+    --xp-gold: 38 92% 50%;
+    --xp-gold-foreground: 38 92% 25%;
+
+    --sidebar-background: 215 28% 17%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 20% 22%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 215 20% 25%;
+    --sidebar-ring: 217 91% 60%;
+
+    /* Multi-brand accent colors */
+    --brand-referrizer: 217 91% 60%;
+    --brand-referrizer-hover: 221 83% 53%;
+    --brand-referrizer-bg: 215 28% 17%;
+
+    --brand-wrh: 142 71% 42%;
+    --brand-wrh-hover: 142 76% 36%;
+    --brand-wrh-bg: 150 28% 15%;
+
+    --brand-tc: 24 95% 53%;
+    --brand-tc-hover: 20 90% 48%;
+    --brand-tc-bg: 20 28% 15%;
+
+    /* Executive voice colors */
+    --voice-visionary: 263 70% 58%;
+    --voice-closer: 217 91% 60%;
+    --voice-strategist: 160 60% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer utilities {
+  .card-surface {
+    @apply bg-card rounded-xl border border-border;
+    box-shadow: var(--card-shadow);
+  }
+  .card-surface-hover {
+    @apply card-surface transition-shadow duration-300;
+  }
+  .card-surface-hover:hover {
+    box-shadow: var(--card-shadow-hover);
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 5px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.2);
+    border-radius: 10px;
+  }
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+}
+
+@keyframes emojifall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+@keyframes screenflash {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
